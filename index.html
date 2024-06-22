@@ -16,6 +16,14 @@
 <script src="./Qgis2threejs.js"></script>
 <script src="./threejs/DeviceOrientationControls.js"></script>
 <script src="./mobile.js"></script>
+<script>
+    window.onload = function() {
+        var img = document.createElement('img');
+        img.src = "https://maper.info/Dem1zrr.jpeg";
+        img.style.display = "none";
+        document.body.appendChild(img);
+    };
+</script>
 </head>
 <body>
 
@@ -115,60 +123,4 @@
         <tr><td>One Finger Move</td><td>Orbit</td></tr>
         <tr><td>Two Fingers Pinch</td><td>Zoom</td></tr>
         <tr><td>Two Fingers Move</td><td>Pan</td></tr>
-      </table>
-
-      <h1>About</h1>
-      <div id="about">
-        This page was made with <a href="https://www.qgis.org/">QGIS</a> and <a href="https://github.com/minorua/Qgis2threejs">Qgis2threejs</a> plugin (version 2.7.3).
-        <div>Powered by <a href="https://threejs.org/">three.js</a>,
-        <a href="https://trac.osgeo.org/proj4js/">Proj4js</a> and
-        <a href="https://fontawesome.com/">Font Awesome</a>.</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- progress bar -->
-<div id="progress"><div id="progressbar"></div></div>
-
-<!-- header and footer -->
-<div id="header">                  UPPER BUFFALO RIVER, ARKANSAS</div>
-<div id="footer"></div>
-
-<!-- animation -->
-<div id="narrativebox" class="ef1">
-  <div id="narbody">
-
-  </div>
-  <div id="nextbtn"></div>
-</div>
-
-<script>
-Q3D.Config.AR.MND = 0.0;
-Q3D.Config.northArrow.enabled = true;
-Q3D.Config.northArrow.color = 0xeec913;
-
-var container = document.getElementById("view"),
-    app = Q3D.application,
-    gui = Q3D.gui;
-
-app.init(container);          // initialize viewer
-init();                       // initialization for mobile template (in mobile.js)
-
-// load the scene
-app.loadSceneFile("./data/index/scene.json", function (scene) {
-  // scene file has been loaded
-  app.start();
-
-  if ("AR" in app.urlParams) {
-    document.getElementById("ar-checkbox").checked = true;
-    startARMode();
-    moveToCurrentLocation();
-  }
-}, function (scene) {
-  // all relevant files have been loaded
-
-});
-</script>
-</body>
-</html>
+     
